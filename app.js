@@ -24,7 +24,7 @@ const express = require('express');
 const MongoStore = require('connect-mongo');
 
  //const dbURL = 'mongodb://localhost:27017/yelp-camp';//
- const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
+ const dbURL = process.env.DB_URL;
 mongoose .connect(dbURL);
 
 
@@ -48,7 +48,7 @@ const app = express();
 }))
 
 const store = MongoStore.create({
-    mongoUrl: process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp',
+    mongoUrl: process.env.DB_URL;,
     touchAfter: 24 * 60 * 60, // Lazy session update after 24 hours
   });
 
