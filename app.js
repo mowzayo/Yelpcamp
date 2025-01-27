@@ -48,7 +48,7 @@ const app = express();
 }))
 
 const store = MongoStore.create({
-    mongoUrl: process.env.DB_URL;,
+    mongoUrl: process.env.DB_URL,
     touchAfter: 24 * 60 * 60, // Lazy session update after 24 hours
   });
 
