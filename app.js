@@ -23,7 +23,8 @@ const express = require('express');
  const reviewRoutes = require ('./routes/reviews');
 const MongoStore = require('connect-mongo');
 
- const dbURL = 'mongodb://localhost:27017/yelp-camp';
+ //const dbURL = 'mongodb://localhost:27017/yelp-camp';//
+ const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 mongoose .connect(dbURL);
 
 
